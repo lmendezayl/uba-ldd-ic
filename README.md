@@ -18,13 +18,16 @@
 | 01 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase01-ldd-numpy.ipynb) | Introducción a NumPy |
 | 02 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase02-ldd-estadisticaDescriptiva.ipynb) | Estadística Descriptiva |
 | 03 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase03-ldd-visualizacion.ipynb) | Visualización de Datos |
-| 07 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase7-ldd-cuadradosminimos.ipynb) | Mínimos Cuadrados |
+| 06 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase06-ldd-regresionlineal.ipynb) | Regresión Lineal |
+| 07 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase07-ldd-cuadradosminimos.ipynb) | Mínimos Cuadrados |
 | 08 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase08-ldd-limpieza-sin-resolver.ipynb) | Limpieza de Datos |
 | 09 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase09-ldd-operaciones.ipynb) | Operaciones con DataFrames |
 | 09 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase09-ldd-modeloLinealMultivariado.ipynb) | Modelo Lineal Multivariado |
 | 10 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase10-ldd-preprocesamiento.ipynb) | Preprocesamiento de Datos |
-| 11 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase11-web-scrapping.ipynb) | Web Scraping |
-| 12 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase12-ldd-validacion-clase.ipynb) | Validación de Modelos |
+| 11 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase11-ldd-web-scrapping.ipynb) | Web Scraping |
+| 12 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase12-ldd-validacion-clase.ipynb) | Validación de Modelos (K-Folds) |
 | 13 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase13-ldd-ridge.ipynb) | Regularización (Ridge) |
 | 14 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase14-ldd-interacciones-clase.ipynb) | Interacciones en Modelos |
-| 15 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase15-leave-one-out.ipynb) | Validación Cruzada (Leave-One-Out) |
+| 15 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase15-ldd-leave-one-out.ipynb) | Validación Cruzada (Leave-One-Out) |
+| 16 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase16-ldd-clusteringkmeans.ipynb) | Clustering con K-Means |
+| 17 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase17-ldd-dbscan.ipynb) | DBSCAN |
