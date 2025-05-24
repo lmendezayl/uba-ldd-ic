@@ -29,5 +29,5 @@
 | 13 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase13-ldd-ridge.ipynb) | Regularización (Ridge) |
 | 14 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase14-ldd-interacciones-clase.ipynb) | Interacciones en Modelos |
 | 15 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase15-ldd-leave-one-out.ipynb) | Validación Cruzada (Leave-One-Out) |
-| 16 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase16-ldd-clusteringkmeans.ipynb) | Clustering con K-Means |
+| 16 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase16_ldd_clusteringkmeans.ipynb) | Clustering con K-Means |
 | 17 | [Link](https://github.com/lmendezayl/uba-ldd-ic/blob/main/notebooks/clase17-ldd-dbscan.ipynb) | DBSCAN |
