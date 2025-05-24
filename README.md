@@ -9,6 +9,7 @@
 |  5 - Operaciones con DataFrames, limpieza y transformaciones de datos|[Enunciado](./guias/enunciados/Pr%C3%A1ctica%205%20-%20Operaciones%20con%20DataFrames%2C%20limpieza%20y%20transformaciones%20de%20datos.pdf)   | [Notebook](./guias/soluciones/practica5.ipynb) |
 |  6 - Modelo lineal multivariado y transformaciones de datos    | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%206%20-%20Modelo%20lineal%20multivariado%20y%20transformaciones%20de%20datos.pdf)   | [Notebook](./guias/soluciones/practica6.ipynb)     |
 |  7 - Entrenamiento, validacion y testeo    | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%207%20-%20Entrenamiento%2C%20validacion%20y%20testeo.pdf)   | [Notebook](./guias/soluciones/practica7.ipynb)     |
+|  8 - Clustering y Clasificación   | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%208%20-%20Clustering%20y%20Clasificacion.pdf)   | [Notebook](./guias/soluciones/practica8.ipynb)     |
 
 
 ### Clases del Curso
