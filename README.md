@@ -10,7 +10,9 @@
 |  6 - Modelo lineal multivariado y transformaciones de datos    | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%206%20-%20Modelo%20lineal%20multivariado%20y%20transformaciones%20de%20datos.pdf)   | [Notebook](./guias/soluciones/practica6.ipynb)     |
 |  7 - Entrenamiento, validacion y testeo    | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%207%20-%20Entrenamiento%2C%20validacion%20y%20testeo.pdf)   | [Notebook](./guias/soluciones/practica7.ipynb)     |
 |  8 - Clustering y Clasificación   | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%208%20-%20Clustering%20y%20Clasificacion.pdf)   | [Notebook](./guias/soluciones/practica8.ipynb)     |
-
+|  9 - Componentes Principales  | [Enunciado](./guias/enunciados/Pr%C3%A1ctica%209%20-%20Componentes%20principales.pdf)   | [Notebook](./guias/soluciones/practica9.ipynb)     |
+|  10 - Descenso por gradiente y Redes Neuronales   | [Enunciado](./guias/enunciados/Práctica%2010%20-%20Descenso%20por%20gradiente%20y%20Redes%20Neuronales.pdf)   | [Notebook](./guias/soluciones/practica10.ipynb)     |
+  
 
 ### Clases del Curso
 
