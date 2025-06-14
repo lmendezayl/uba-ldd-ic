@@ -300,7 +300,7 @@ class Regressor(tf.keras.Model):
 
         title = 'Mean Squared Error' if not self.classifying else 'Cross-Entropy Error'
         plot = plot.label(title=title, x='Epoch', y=loss_abbv)
-        plot.show()
+        plot.plot().show()
 
     def animate_regression(self, X, y):
         """ Anima el grafico de regresion a traves de las epocas. Solo funciona si los datos de X tienen uno o dos
