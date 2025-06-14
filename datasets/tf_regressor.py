@@ -1,6 +1,6 @@
 """
 Desarrollado para la materia Laboratorio de Datos dictada por el Instituto de Calculo de la Facultad de Ciencias
-Exactas y Naturales de la Universida de Buenos Aires durante el Primer Cuatrimestre de 2024.
+Exactas y Naturales de la Universida de Buenos Aires.
 """
 
 import logging
@@ -19,18 +19,22 @@ from numpy.linalg import norm
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+# Silencia algunas advertencias de TensorFlow
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
+# Para que no use la GPU, sino el CPU
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 import tensorflow as tf
 import keras
-
 
 class PathRecorder(keras.callbacks.Callback):
     """
     Un callback para registrar los pesos y el intercept al final de cada epoca, para luego poder graficar
     """
     def on_epoch_end(self, epoch, logs=None):
-        self.model.path.append(np.array(list(chain([self.model.b.numpy()], self.model.w.numpy()))))
+        self.model.weights_path.append(np.array(list(chain([self.model.b.numpy()], self.model.w.numpy()))))
 
 
 class Regressor(tf.keras.Model):
@@ -43,7 +47,7 @@ class Regressor(tf.keras.Model):
     with_intercept : indica si f tiene intercept ( bool )
     f : la funcion con la cual se quiere hacer regresion ( function )
     opt : tipo de optimizador ('gd' : descenso por gradiente; 'sgd' : descenso por gradiente estocastico)
-    path : lista con los pesos al final de cada epoca ( list[tensor] )
+    weight_path : lista con los pesos al final de cada epoca ( list[tensor] )
     hist : guarda el objeto History que devuelve el metodo fit de keras.Model
     loss_w : funcion de perdida como funcion de los pesos y del bias ( L(b,w) )
     classifying : indica si se trata de un problema de clasificacion ( bool )
@@ -57,7 +61,7 @@ class Regressor(tf.keras.Model):
         self.with_intercept = False
         self.f = None
         self.opt = None
-        self.path = []
+        self.weights_path = []
         self.hist = None
         self.loss_w = None
         self.classifying = False
@@ -236,9 +240,9 @@ class Regressor(tf.keras.Model):
 
         # Con esto marcamos los limites del grafico para observar todo el recorrido del algoritmo
         i = 0 if self.with_intercept else 1
-        last_w = self.path[-1][i:]
+        last_w = self.weights_path[-1][i:]
 
-        max_dist = max(norm(s[i:] - last_w, np.inf) for s in self.path)
+        max_dist = max(norm(s[i:] - last_w, np.inf) for s in self.weights_path)
         left, right = (last_w[0] - max_dist*1.1), (last_w[0] + max_dist*1.1)
         bottom, top = (last_w[1] - max_dist*1.1), (last_w[1] + max_dist*1.1)
 
@@ -259,8 +263,8 @@ class Regressor(tf.keras.Model):
 
         # Con esto generamos la linea del trayecto del algoritmo
         ax.add_line(lines.Line2D(
-            [w[0+i] for w in self.path],
-            [w[1+i] for w in self.path],
+            [w[0+i] for w in self.weights_path],
+            [w[1+i] for w in self.weights_path],
             color='r', lw=2, marker='o', label='Recorrido del algoritmo'
         ))
 
@@ -321,13 +325,13 @@ class Regressor(tf.keras.Model):
         x_arr = np.linspace(left, right)
         sns.scatterplot(x=X, y=y)
         line = ax.plot(x_arr,
-                       self.f(x_arr, self.path[0][1:], self.path[0][0]),
+                       self.f(x_arr, self.weights_path[0][1:], self.weights_path[0][0]),
                        color='r',
                        lw=2
                        )[0]
 
         # Agregamos texto para indicar el valor de los pesos y del bias
-        text_str = f'$w= $ {np.round(self.path[0][1:], 2)} \n $b =$ {self.path[0][0]:.2f}'
+        text_str = f'$w= $ {np.round(self.weights_path[0][1:], 2)} \n $b =$ {self.weights_path[0][0]:.2f}'
         props = dict(boxstyle='round', facecolor='white', alpha=0.5)
         text_artist = ax.text(0.05, 0.95, text_str, transform=ax.transAxes, fontsize=12,
                               verticalalignment='top', bbox=props)
@@ -335,17 +339,17 @@ class Regressor(tf.keras.Model):
         # Definimos una funcion que determina cada fotograma de la animacion
         def update(i):
             # Actualizamos el grafico de la funcion de regresion
-            line.set_ydata(self.f(x_arr, self.path[i][1:], self.path[i][0]))
+            line.set_ydata(self.f(x_arr, self.weights_path[i][1:], self.weights_path[i][0]))
             # Actualizamos el titulo del grafico
             ax.set_title(f'Epoch {i}')
             # Actualizamos el texto
-            text_artist.set_text(f'$w= $ {np.round(self.path[i][1:], 2)} \n $b =$ {self.path[i][0]:.2f}')
+            text_artist.set_text(f'$w= $ {np.round(self.weights_path[i][1:], 2)} \n $b =$ {self.weights_path[i][0]:.2f}')
             return line
 
         # Generamos la animacion
         # Mas informacion en : https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html
         animation = matplotlib.animation.FuncAnimation(fig, update,
-                                                       frames=len(self.path),
+                                                       frames=len(self.weights_path),
                                                        repeat=False)
         plt.show()
 
