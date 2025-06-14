@@ -299,7 +299,7 @@ class Regressor(tf.keras.Model):
             pass
 
         title = 'Mean Squared Error' if not self.classifying else 'Cross-Entropy Error'
-        plot = plot.label(title=title, x='Epoch', y=loss_abbv)
+        plot = plot.label(title=title, x='Epoch', y=loss_abbv).limit(x=(30, None))
         plot.plot().show()
 
     def animate_regression(self, X, y):
